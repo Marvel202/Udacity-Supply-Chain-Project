@@ -1,0 +1,5 @@
+.env
+index_ss.html
+./src/js/App1.js
+./src/js/App2.js
+node_modules

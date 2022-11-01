@@ -1,0 +1,25 @@
+{
+  "name": "supply-chain-e",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.0.17",
+    "dotenv": "^16.0.3",
+    "ganache-cli": "^6.12.2",
+    "web3": "^1.8.0"
+  },
+  "description": ""
+}
