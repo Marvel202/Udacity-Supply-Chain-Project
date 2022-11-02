@@ -38,7 +38,7 @@ For a pre-determined development environment, please use:
 
 Your terminal should look something like this:
 
-![truffle test](images/ganache-cli.png)
+![truffle test](images/test_wallets.png)
 
 In a separate terminal window, Compile smart contracts:
 
