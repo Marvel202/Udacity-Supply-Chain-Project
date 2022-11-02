@@ -3030,10 +3030,16 @@
       "links": {},
       "address": "0xfe58651e9349EeAEC709dcCc4ff844bDdFa6B548",
       "transactionHash": "0x38021e804ca991efa96ff451725f57757a5a7a9491fb1141f9d699ab11dd921e"
+    },
+    "1667346892212": {
+      "events": {},
+      "links": {},
+      "address": "0xA65B87754E0A73860AA6B7eb6E95D79CD2d893d2",
+      "transactionHash": "0x5383e8f168fc42c97494b71d30472a85633e0f6ac5a8e4eac2d2ad27bc5b5f0c"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-11-01T15:15:06.479Z",
+  "updatedAt": "2022-11-01T23:56:17.532Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
