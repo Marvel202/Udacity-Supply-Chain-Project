@@ -1,8 +1,8 @@
-##Supply Chain - Coffee Beans
+#Supply Chain - Coffee Beans
 
 This repository containts an Ethereum DApp that demonstrates a Supply Chain flow of Coffee Beans between a Seller and Buyer. The user story is similar to any commonly used supply chain process. A Seller can add items to the inventory system stored in the blockchain. A Buyer can purchase such items from the inventory system. Additionally a Seller can mark an item as Shipped, and similarly a Buyer can mark an item as Received.
 
-##Libraries
+#Libraries
 Basic libraries for this repository can be installed via **npm install** <<library name>> and they are installed either under global or local environment.
  
 1. Global envirnoment
@@ -21,7 +21,7 @@ Basic libraries for this repository can be installed via **npm install** <<libra
 3. Other libraries
 - npm link sol2uml --only=production (for generating class UML automatically)
 
-##Getting Start
+#Getting Start
 
 Create a new directory as project folder and install all requisite npm packages (as listed in package.json):
 	cd project-6
@@ -29,7 +29,7 @@ Create a new directory as project folder and install all requisite npm packages 
 
 
 
-##Launch Ganache
+#Launch Ganache
 
 For a pre-determined development environment, please use: 
 
