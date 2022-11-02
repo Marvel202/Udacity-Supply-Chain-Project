@@ -62,7 +62,6 @@ App = {
             App.web3Provider = window.ethereum;
             try {
                 // Request account access
-                // await window.ethereum.enable();
                var accounts =  await window.ethereum.request({
                     method: "eth_requestAccounts",
                 })
@@ -110,8 +109,6 @@ App = {
             console.log('data',data);
             var SupplyChainArtifact = data;
             App.contracts.SupplyChain = TruffleContract(SupplyChainArtifact);
-           
-            console.log("metamask",App.web3Provider)
             App.contracts.SupplyChain.setProvider(App.web3Provider);
             App.web3Provider.defaultAccount= App.metamaskAccountID
             console.log("^^^",App.contracts.SupplyChain.setProvider(App.web3Provider))
@@ -119,15 +116,6 @@ App = {
             App.fetchItemBufferTwo();
             App.fetchEvents();
             App.onloadedAddr();
-            // web3 = new Web3(App.web3Provider);
-            // web3.eth.getAccounts(function(err, res) {
-            //     if (err) {
-            //         console.log('Error:',err);
-            //         return;
-            //     }
-            // App.web3Provider.defaultAccount = res[0];
-            // })
-         console.log(App.web3Provider)
             console.log("defaultAccount",App.web3Provider.defaultAccount)
             
         });
@@ -144,18 +132,13 @@ App = {
     bindEvents: function() {
    
         $(document).on('click', App.handleButtonClick);
-        // $('#harvestInfo').on('change',App.setHarvestInfo);
-        // $('#farm').on('change',App.setFarmDetails);
-        // $('#productDetails').on('change',App.setProductDetails);
-
     },
 
 
     setHarvestInfo: async function() {
         
         var upc =  $("#upc").val();
-
-       App.contracts.SupplyChain.deployed().then(function(instance) {
+        App.contracts.SupplyChain.deployed().then(function(instance) {
             instance.fetchItemBufferOne(upc).then(res => $("#ownerID").val(res.ownerID))
        })
        await App.readForm();
@@ -217,7 +200,7 @@ App = {
         event.preventDefault();
         var processId = parseInt($(event.target).data('id'));
         App.originFarmerID = $('#originFarmerID').val();
-    console.log("farmer", App.originFarmerID)
+        console.log("farmer", App.originFarmerID)
    
         App.contracts.SupplyChain.deployed().then(function(instance) {
             return instance.harvestItem(
