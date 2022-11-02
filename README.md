@@ -21,7 +21,7 @@ Basic libraries for this repository can be installed via **npm install** <<libra
 3. Other libraries
 - npm link sol2uml --only=production (for generating class UML automatically)
 
-#Getting Start
+Getting Start
 
 Create a new directory as project folder and install all requisite npm packages (as listed in package.json):
 	cd project-6
