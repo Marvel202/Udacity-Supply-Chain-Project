@@ -133,25 +133,6 @@ App = {
    
         $(document).on('click', App.handleButtonClick);
     },
-
-
-    setHarvestInfo: async function() {
-        
-        var upc =  $("#upc").val();
-        App.contracts.SupplyChain.deployed().then(function(instance) {
-            instance.fetchItemBufferOne(upc).then(res => $("#ownerID").val(res.ownerID))
-       })
-       await App.readForm();
-    },
-
-    setFarmDetails: function() {
-        App.readForm();
-    
-    },
-
-    setProductDetails: function() {
-        App.readForm();
-    },
    
 
     handleButtonClick: async function(event) {
