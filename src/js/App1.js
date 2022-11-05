@@ -96,7 +96,8 @@ App = {
             }
             console.log('getMetaskID:',res);
             App.metamaskAccountID = res[0];
-          
+            
+
         })
     },
 
@@ -105,7 +106,7 @@ App = {
         var jsonSupplyChain='../../build/contracts/SupplyChain.json';
         var accounts = await web3.eth.getAccounts();
         web3.eth.defaultAccount = await accounts[0];
-    
+
         /// JSONfy the smart contracts
        await $.getJSON(jsonSupplyChain, function(data) {
             console.log('data',data);
@@ -123,22 +124,14 @@ App = {
             })
 
             console.log("meta",App.meta)
-
-         
-           
+    
             App.fetchItemBufferOne();
             App.fetchItemBufferTwo();
             App.fetchEvents();
      
-            // contract = App.contracts.SupplyChain.deployed();
-            // test = contract.then(function(instance) {
-            //     instance.isFarmer("0xB14AF8F124b7aFc424CEe6233a113E5E0C38a917", {from:"0xB14AF8F124b7aFc424CEe6233a113E5E0C38a917"})
-            // })
             
-      
+        });
         return App.bindEvents();
-        })
- 
     },
 
 
@@ -196,133 +189,73 @@ App = {
             }
     },
 
-    addRole: function(event) {
-        event.preventDefault();
-  
-        farmerID = $("#originFarmerID").val();
-        distributorID = $("#distributorID").val();
-        retailerID = $("#retailerID").val();
-        consumerID = $("#consumerID").val();
+    addRole: async function(event) {
+
+            event.preventDefault();
+            selectElement = document.querySelector('#roles');
+
+            const contract = App.contracts.SupplyChain.deployed()
+            output = selectElement.value;
+            console.log("selctedval", output)
+            id = $('#roleId').val()
+            document.querySelector('.output').textContent = output;
+            
         web3 = new Web3(App.web3Provider);
         console.log("tx count",web3.eth.getTransactionCount(App.metamaskAccountID))
-        const contract = App.contracts.SupplyChain.deployed()
 
-        isFarmer=contract.then(function(instance) {
-            return instance.isFarmer(farmerID);
-            })
-        console.log("isFarmer",isFarmer)
-        isDistributor=contract.then(function(instance) {
-            return instance.isDistributor(distributorID);
-            })
-        console.log("isDistributor",isDistributor)
-        if(farmerID) {
-            App.originFarmerID = farmerID;
-            contract.then(function(instance) {
-                return instance.addFarmer(App.originFarmerID, {from: App.metamaskAccountID});
-                }).then(function(result) {$("#ftc-item").text(result);
-                console.log('addFarmer',result);
-                }).catch(function(err) {
-                console.log(err.message);
-                });
-        }
-        if(distributorID) {
-            App.distributorID = distributorID;
-            contract.then(function(instance) {
-                return instance.addDistributor(App.distributorID, {from: App.metamaskAccountID});
-                }).then(function(result) {$("#ftc-item").text(result);
-                console.log('addDistributor',result);
-                }).catch(function(err) {
-                console.log(err.message);
-                });
-        }
-        if(retailerID) {
-            App.retailerID = retailerID;
-            contract.then(function(instance) {
-                return instance.App.retailerID(App.retailerID, {from: App.metamaskAccountID});
-                }).then(function(result) {$("#ftc-item").text(result);
-                console.log('addRetailer',result);
-                }).catch(function(err) {
-                console.log(err.message);
-                });
-        }
-        if(consumerID) {
-            App.consumerID = consumerID ;
-            contract.then(function(instance) {
-                return instance.App.retailerID(App.consumerID, {from: App.metamaskAccountID});
-                }).then(function(result) {$("#ftc-item").text(result);
-                console.log('addConsumer',result);
-                }).catch(function(err) {
-                console.log(err.message);
-                });
-        }
-    },
-    // addRole: async function(event) {
-
-    //         event.preventDefault();
-    //         selectElement = document.querySelector('#roles');
-
-    //         const contract = App.contracts.SupplyChain.deployed()
-    //         output = selectElement.value;
-    //         console.log("selctedval", output)
-    //         id = $('#roleId').val()
-    //         document.querySelector('.output').textContent = output;
-            
-    //     web3 = new Web3(App.web3Provider);
-    //     console.log("tx count",web3.eth.getTransactionCount(App.metamaskAccountID))
-
-    //         switch(output) {
-    //             case "originFarmerID":
-    //                 App.originFarmerID = id
-    //                 console.log("farmerID",App.originFarmerID)
-    //                 contract.then(function(instance) {
-    //                  return instance.addFarmer(App.originFarmerID, {from: App.metamaskAccountID});
-    //                   }).then(function(result) {
-    //                   $("#ftc-item").text(result);
-    //                   console.log('addFarmer',result);
-    //                  }).catch(function(err) {
-    //                  console.log(err.message);
-    //                  });
+            switch(output) {
+                case "originFarmerID":
+                    App.originFarmerID = id
+                    console.log("farmerID",App.originFarmerID)
+                    contract.then(function(instance) {
+                     return instance.addFarmer(App.originFarmerID, {from: App.metamaskAccountID});
+                      }).then(function(result) {
+                      $("#ftc-item").text(result);
+                      console.log('addFarmer',result);
+                     }).catch(function(err) {
+                     console.log(err.message);
+                     });
            
-    //                 break;
-    //             case "distributorID":
-    //                 console.log("id1",id)
-    //                 App.distributorID = id;
-    //                 contract.then(function(instance) {
-    //                 return instance.addDistributor(App.distributorID, {from: App.metamaskAccountID});
-    //                 }).then(function(result) {
-    //                     $("#ftc-item").text(result);
-    //                     console.log('addDistributor',result);
-    //                 }).catch(function(err) {
-    //                     console.log(err.message);
-    //                 });
-    //                 break;
-    //             case "retailerID":
-    //                 console.log("id1",id)
-    //                 App.retailerID = id;
-    //                 contract.then(function(instance) {
-    //                 return instance.addRetailer(App.retailerID, {from: App.metamaskAccountID});
-    //                 }).then(function(result) {
-    //                     $("#ftc-item").text(result);
-    //                     console.log('addRetailer',result);
-    //                 }).catch(function(err) {
-    //                     console.log(err.message);
-    //                 });
-    //                 break;
-    //             case "consumerID":
-    //                App.consumerID = id; 
-    //                console.log("consumerID",App.consumerID)
-    //                contract.then(function(instance) {
-    //                 return instance.addConsumer(App.consumerID, {from: App.metamaskAccountID});
-    //                 }).then(function(result) {
-    //                     $("#ftc-item").text(result);
-    //                     console.log('addConsumer',result);
-    //                 }).catch(function(err) {
-    //                     console.log(err.message);
-    //                 });
-    //                 break;
-    //         }
+                    break;
+                case "distributorID":
+                    console.log("id1",id)
+                    App.distributorID = id;
+                    contract.then(function(instance) {
+                    return instance.addDistributor(App.distributorID, {from: App.metamaskAccountID});
+                    }).then(function(result) {
+                        $("#ftc-item").text(result);
+                        console.log('addDistributor',result);
+                    }).catch(function(err) {
+                        console.log(err.message);
+                    });
+                    break;
+                case "retailerID":
+                    console.log("id1",id)
+                    App.retailerID = id;
+                    contract.then(function(instance) {
+                    return instance.addRetailer(App.retailerID, {from: App.metamaskAccountID});
+                    }).then(function(result) {
+                        $("#ftc-item").text(result);
+                        console.log('addRetailer',result);
+                    }).catch(function(err) {
+                        console.log(err.message);
+                    });
+                    break;
+                case "consumerID":
+                   App.consumerID = id; 
+                   console.log("consumerID",App.consumerID)
+                   contract.then(function(instance) {
+                    return instance.addConsumer(App.consumerID, {from: App.metamaskAccountID});
+                    }).then(function(result) {
+                        $("#ftc-item").text(result);
+                        console.log('addConsumer',result);
+                    }).catch(function(err) {
+                        console.log(err.message);
+                    });
+                    break;
+            }
    
-    // },
+    },
 
     harvestItem: function(event) {
         event.preventDefault();

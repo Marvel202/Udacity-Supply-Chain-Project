@@ -177,9 +177,11 @@ contract SupplyChain is FarmerRole, DistributorRole, RetailerRole, ConsumerRole,
     string memory _originFarmLongitude, 
     string memory _productNotes
     ) 
-  onlyFarmer public 
+ onlyFarmer public 
   {
+
     // Add the new item as part of Harvest
+    
     Item memory item = Item({
       sku: 1,
       upc: _upc,

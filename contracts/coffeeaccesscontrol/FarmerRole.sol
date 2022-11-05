@@ -31,8 +31,9 @@ contract FarmerRole {
     return farmers.has(account);
   }
 
+
   // Define a function 'addFarmer' that adds this role
-  function addFarmer(address account) public {
+  function addFarmer(address account) public onlyFarmer {
     _addFarmer(account);
   }
 

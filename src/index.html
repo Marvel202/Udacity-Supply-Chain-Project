@@ -37,12 +37,60 @@
             </div>
         </div>
         <div class=form-break></div>
-        <h2>Farm Details</h2>
-        <div id="farm" class="form-group">
-            Farmer ID
+
+        <h2>Assigning Roles</h2>
+        <p><em>This part can only be submitted by Contract Owner </em></p>
+        <div class="form-group">
+            Address:
             <br>
+            Farmer ID
             <input type="text" id="originFarmerID" name="originFarmerID" placeholder="e.g. 0xecdf2bca71218B0dd50b140982c0Aa9A89A3826d"
                 size="50"><br>
+           <br>
+            Distributor ID
+            <br>
+            <input type="text" id="distributorID" name="distributorID" placeholder="e.g 0xa1B2F1637E044a0e95Cc308a03D027F02E03E05D"
+                size="50">
+            <br>
+            Retailer ID
+            <br>
+            <input type="text" id="retailerID" name="retailerID" placeholder="e.g 0x0fb2bfefd526966c87efa19f6693d50971763fc2"
+                size="50"><br>
+            Consumer ID
+            <br>
+            <input type="text" id="consumerID" name="consumerID" placeholder="e.g 0x5d777e9127b28fb119e81a6304278a0a21bef1c4"
+                size="50"><br>
+            <br> 
+
+            <button class="btn-role" id="btn-role" type="button" data-id="11">Add Role</button> 
+
+                 <!-- Address:
+                <br>
+                <input type="text" id="roleId" name="roleID" placeholder="e.g. 0xecdf2bca71218B0dd50b140982c0Aa9A89A3826d"
+                size="50"><br> 
+
+                <label for="roles">Choose a role:</label>
+                <select name="roles" id="roles">
+                    <option value="originFarmerID">Farmer ID</option>
+                    <option value="distributorID">Distributor ID</option>
+                    <option value="retailerID">Retailer ID</option>
+                    <option value="consumerID">consumerID</option>
+                </select>
+                <br>
+                <button class="btn-role" id="btn-role" type="button" data-id="11">Add Role</button> 
+                <p> You have selected:
+                    <span class="output"></span>
+                </p> -->
+
+        </div>
+        <div class=form-break></div>
+
+        <h2>Farm Details</h2>
+        <div id="farm" class="form-group">
+            <!-- Farmer ID
+            <br>
+            <input type="text" id="originFarmerID" name="originFarmerID" placeholder="e.g. 0xecdf2bca71218B0dd50b140982c0Aa9A89A3826d"
+                size="50"><br> -->
             Farm Name
             <br>
             <input type="text" id="originFarmName" name="originFarmName" value="John Doe"><br>
@@ -70,7 +118,7 @@
             Product Price
             <br>
             <input type="number" id="productPrice" name="productPrice" value=1>ETH<br>
-            Distributor ID
+            <!-- Distributor ID
             <br>
             <input type="text" id="distributorID" name="distributorID" placeholder="e.g 0xa1B2F1637E044a0e95Cc308a03D027F02E03E05D"
                 size="50">
@@ -83,7 +131,7 @@
             <br>
             <input type="text" id="consumerID" name="consumerID" placeholder="e.g 0x5d777e9127b28fb119e81a6304278a0a21bef1c4"
                 size="50"><br>
-            <br>
+            <br> -->
             <button class="btn-buy" id="button" type="button" data-id="5">Buy</button>
             <button class="btn-ship" id="button" type="button" data-id="6">Ship</button>
             <button class="btn-receive" id="button" type="button" data-id="7">Receive</button>
@@ -105,7 +153,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- <script src="./src/js/web3.min.js"></script> -->
     <!-- <script src="./src/js/truffle-contract.js"></script> -->
-    <script src="./src/js/app.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>
