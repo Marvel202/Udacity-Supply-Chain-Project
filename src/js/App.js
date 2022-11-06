@@ -1,6 +1,6 @@
 App = {
     web3Provider: null,
-    meta: null,
+    // meta: null,
     contracts: {},
     emptyAddress: "0x0000000000000000000000000000000000000000",
     sku: 0,
@@ -117,28 +117,27 @@ App = {
                 $("#loadedAddr").text("Contract address: https://goerli.etherscan.io/address/"+result.address);
                 }) : contractId.then(function(result){$("#loadedAddr").text("Contract address: " + result.address)
              })
-            App.meta = new web3.eth.Contract(data.abi, contractId.address)
-            contractId.then(function(result) {
-                App.meta.options = result.address
-            })
+            // App.meta = new web3.eth.Contract(data.abi, contractId.address)
+            // contractId.then(function(result) {
+            //     App.meta.options = result.address
+            // })
 
-            console.log("meta",App.meta)
+            // console.log("meta",App.meta)
 
-         
-           
+            // contract = App.contracts.SupplyChain.deployed();
+      
+            // contract.then(function(instance) {
+            //     return instance.isFarmer(web3.eth.defaultAccount)
+            //     }).then(function(result) {
+            //     if(result) {
+            //         $("#farm").text("Farmer Address "+web3.eth.defaultAccount)}
+            //     })
+        
             App.fetchItemBufferOne();
             App.fetchItemBufferTwo();
             App.fetchEvents();
-     
-            // contract = App.contracts.SupplyChain.deployed();
-            // test = contract.then(function(instance) {
-            //     instance.isFarmer("0xB14AF8F124b7aFc424CEe6233a113E5E0C38a917", {from:"0xB14AF8F124b7aFc424CEe6233a113E5E0C38a917"})
-            // })
-            
-      
-        return App.bindEvents();
+            return App.bindEvents();
         })
- 
     },
 
 
@@ -146,9 +145,8 @@ App = {
    
         $(document).on('click', App.handleButtonClick);
         $('#harvestInfo').on('change',App.setHarvestInfo);
-        $('#farm').on('change',App.setFarmDetails);
-        $('#productDetails').on('change',App.setProductDetails);
-
+        // $('#farm').on('change',App.setFarmDetails);
+        // $('#productDetails').on('change',App.setProductDetails);
     },
 
 
@@ -159,7 +157,8 @@ App = {
      
         var processId = parseInt($(event.target).data('id'));
         console.log('processId',processId);
-
+        web3 = new Web3(App.web3Provider);
+        console.log("tx count",web3.eth.getTransactionCount(App.metamaskAccountID))
         switch(processId) {
             case 1:
                 return await App.harvestItem(event);
@@ -196,65 +195,60 @@ App = {
             }
     },
 
-    addRole: function(event) {
+    addRole: async function(event) {
         event.preventDefault();
   
-        farmerID = $("#originFarmerID").val();
-        distributorID = $("#distributorID").val();
-        retailerID = $("#retailerID").val();
-        consumerID = $("#consumerID").val();
+        App.originFarmerID = await $("#originFarmerID").val();
+        App.distributorID = await $("#distributorID").val();
+        App.retailerID = await $("#retailerID").val();
+        App.consumerID = await $("#consumerID").val();
         web3 = new Web3(App.web3Provider);
         console.log("tx count",web3.eth.getTransactionCount(App.metamaskAccountID))
-        const contract = App.contracts.SupplyChain.deployed()
+        const instance = await App.contracts.SupplyChain.deployed()
+        console.log("instance", instance)
+        var result;
+        if(App.originFarmerID) {
+            isFarmer = await instance.isFarmer(App.originFarmerID)
+            console.log("isFarmer",isFarmer)
+            try {
+                result = await instance.addFarmer(App.originFarmerID, {from: App.metamaskAccountID});
+                return result;
+            } catch(err) {
+                console.log(err.message)
+            }
+     
+        }
+        
+        if(App.distributorID) {
+            isDistributor= await instance.isDistributor(App.distributorID);
+            console.log("isDistributor",isDistributor)
+            try {
+                result = await instance.addDistributor(App.distributorID, {from: App.metamaskAccountID})
+               return result;
+            } catch (err) {
+                console.log(err.message)
+            }
+        }
+        if(App.retailerID) {
+            isRetailer= await instance.isRetailer(App.retailerID);
+            try {
+                result = await instance.addRetailer(App.retailerID, {from: App.metamaskAccountID})
+                return result;
+            } catch (err) {
+                console.log(err.message)
+            } 
+        }
 
-        isFarmer=contract.then(function(instance) {
-            return instance.isFarmer(farmerID);
-            })
-        console.log("isFarmer",isFarmer)
-        isDistributor=contract.then(function(instance) {
-            return instance.isDistributor(distributorID);
-            })
-        console.log("isDistributor",isDistributor)
-        if(farmerID) {
-            App.originFarmerID = farmerID;
-            contract.then(function(instance) {
-                return instance.addFarmer(App.originFarmerID, {from: App.metamaskAccountID});
-                }).then(function(result) {$("#ftc-item").text(result);
-                console.log('addFarmer',result);
-                }).catch(function(err) {
-                console.log(err.message);
-                });
+        if(App.consumerID) {
+            isConsumer = await instance.isConsumer(App.consumerID);
+            try {
+                result = await instance.addConsumer(App.consumerID, {from: App.metamaskAccountID})
+                return result;
+            } catch (err) {
+                console.log(err.message)
+            } 
         }
-        if(distributorID) {
-            App.distributorID = distributorID;
-            contract.then(function(instance) {
-                return instance.addDistributor(App.distributorID, {from: App.metamaskAccountID});
-                }).then(function(result) {$("#ftc-item").text(result);
-                console.log('addDistributor',result);
-                }).catch(function(err) {
-                console.log(err.message);
-                });
-        }
-        if(retailerID) {
-            App.retailerID = retailerID;
-            contract.then(function(instance) {
-                return instance.App.retailerID(App.retailerID, {from: App.metamaskAccountID});
-                }).then(function(result) {$("#ftc-item").text(result);
-                console.log('addRetailer',result);
-                }).catch(function(err) {
-                console.log(err.message);
-                });
-        }
-        if(consumerID) {
-            App.consumerID = consumerID ;
-            contract.then(function(instance) {
-                return instance.App.retailerID(App.consumerID, {from: App.metamaskAccountID});
-                }).then(function(result) {$("#ftc-item").text(result);
-                console.log('addConsumer',result);
-                }).catch(function(err) {
-                console.log(err.message);
-                });
-        }
+        $("#ftc-item").text(result);
     },
     // addRole: async function(event) {
 
@@ -323,6 +317,12 @@ App = {
     //         }
    
     // },
+    setHarvestInfo: async function() {
+        
+        var upc =  $("#upc").val();
+        const instance = await App.contracts.SupplyChain.deployed()
+       await instance.fetchItemBufferOne(upc).then(res => $("#ownerID").val(res.ownerID));
+    },
 
     harvestItem: function(event) {
         event.preventDefault();

@@ -21,7 +21,7 @@
 
     <div id="ftc-harvest">
         <h2>Product Overview</h2>
-        <div id="harvestInfo" class="form-group">
+        <div id="harvestInfo"  onchange="App.setHarvestInfo()" class="form-group">
             SKU
             <br>
             <input class="input-field" type="number" id="sku" name="sku" value=1><br>
@@ -39,11 +39,11 @@
         <div class=form-break></div>
 
         <h2>Assigning Roles</h2>
-        <p><em>This part can only be submitted by Contract Owner </em></p>
+        <p style="color:red;"><em>**This part can only be submitted by Contract Owner**</em></p>
         <div class="form-group">
-            Address:
             <br>
             Farmer ID
+            <br>
             <input type="text" id="originFarmerID" name="originFarmerID" placeholder="e.g. 0xecdf2bca71218B0dd50b140982c0Aa9A89A3826d"
                 size="50"><br>
            <br>
@@ -86,7 +86,8 @@
         <div class=form-break></div>
 
         <h2>Farm Details</h2>
-        <div id="farm" class="form-group">
+        <p id="farm"></p>
+        <div class="form-group">
             <!-- Farmer ID
             <br>
             <input type="text" id="originFarmerID" name="originFarmerID" placeholder="e.g. 0xecdf2bca71218B0dd50b140982c0Aa9A89A3826d"
