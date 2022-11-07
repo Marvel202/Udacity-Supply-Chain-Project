@@ -114,10 +114,11 @@ App = {
             App.contracts.SupplyChain = TruffleContract(SupplyChainArtifact);
             App.contracts.SupplyChain.setProvider(App.web3Provider);
             const contractId = web3.eth.net.getId().then(res => SupplyChainArtifact.networks[res])
-            SupplyChainArtifact.networks === "5" ? contractId.then(function(result){
+            console.log(Object.keys(SupplyChainArtifact.networks)[0])
+            Object.keys(SupplyChainArtifact.networks)[0] == 5 ? contractId.then(function(result){
                 $("#loadedAddr").text("Contract address: https://goerli.etherscan.io/address/"+result.address);
                 }) : contractId.then(function(result){$("#loadedAddr").text("Contract address: " + result.address)
-             })
+            })
         
             App.fetchItemBufferOne();
             App.fetchItemBufferTwo();
@@ -137,7 +138,7 @@ App = {
     handleButtonClick: async function(event) {
         event.preventDefault();
         App.getMetaskAccountID();
-     
+        App.readForm();
         var processId = parseInt($(event.target).data('id'));
         console.log('processId',processId);
         web3 = new Web3(App.web3Provider);

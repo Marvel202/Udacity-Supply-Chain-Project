@@ -199,7 +199,7 @@ contract SupplyChain is FarmerRole, DistributorRole, RetailerRole, ConsumerRole,
       retailerID:0x0000000000000000000000000000000000000000,
       consumerID:0x0000000000000000000000000000000000000000
     });
-    require(!checkIfUpcExist(_upc),'please provide unique upc');
+    // require(!checkIfUpcExist(_upc),'please provide unique upc');
     items[_upc] = item;
     // Increment sku
     sku = sku + 1;
