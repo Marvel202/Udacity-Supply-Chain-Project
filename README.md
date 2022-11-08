@@ -119,7 +119,7 @@ npm run dev
 1. Activity Diagram
 ![Activity](images/UML/ActivitySC.png)
 2. Sequence Diagram
-![Sequence](images/UML/SC_sequence.png)	
+![Sequence](images/UML/SC_Sequence.png)	
 3. State Diagram
 ![State](images/UML/SC_state.png)
 4. Class Diagram
