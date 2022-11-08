@@ -29,6 +29,9 @@ Create a new directory as project folder and install all requisite npm packages 
 	cd project-6
 	npm install
 
+4. Decentralized Backend and Frontend
+	This DApp is built on Ethereum network which stores record for public access. Transaction record including the DApp program code (smart contract) once deployed are immutable.  Please Goerli Test Network which is the network this DApp is running on.  
+	Frontend of DApp was deployed using IPFS gateway and file storage system.  IPFS is a decentralized web hosting service. The site can be up and running 24/7.
 
 
 ### Launch Ganache
@@ -146,9 +149,9 @@ The architect of DApp and its relevant business logic are illustrated in these U
 	* [Truffle Framework](http://truffleframework.com/) - Truffle is the most popular development framework for Ethereum with a mission to make your life a whole 		lot easier.
 
 ## Final Output
-Etherscan : https://goerli.etherscan.io/address/0x3F8Ee2517c2b68E9721cA0eaAF64e7992457656a 
+Etherscan : [Contract Address](https://goerli.etherscan.io/address/0x3F8Ee2517c2b68E9721cA0eaAF64e7992457656a)
 	</br>
-UI : https://ipfs.io/ipns/k51qzi5uqu5dld2eef4i1m3jiingwf01w1169sh53utjw0j3m8tpnc4zbg7tgu/
+UI : [IPFS-SupplyChain](https://ipfs.io/ipns/k51qzi5uqu5dld2eef4i1m3jiingwf01w1169sh53utjw0j3m8tpnc4zbg7tgu/)
 
 
 ## Authors
