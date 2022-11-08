@@ -116,8 +116,15 @@ In a separate terminal window, launch the DApp:
 npm run dev
 ```
 ### UML
+1. Activity Diagram
 ![Activity](images/UML/ActivitySC.png)
-
+2. Sequence Diagram
+![Sequence](images/UML/SC_sequence.png)	
+3. State Diagram
+![State](images/UML/SC_state.png)
+4. Class Diagram
+![Class](images/UML/classDiagram.png)
+	
 ## Built With
 
 * [Ethereum](https://www.ethereum.org/) - Ethereum is a decentralized platform that runs smart contracts
