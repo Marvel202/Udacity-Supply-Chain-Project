@@ -2,7 +2,7 @@
 
 This repository containts an Ethereum DApp that demonstrates a Supply Chain flow of Coffee Beans between a Seller and Buyer. The user story is similar to any commonly used supply chain process. A Seller can add items to the inventory system stored in the blockchain. A Buyer can purchase such items from the inventory system. Additionally a Seller can mark an item as Shipped, and similarly a Buyer can mark an item as Received.
 
-Libraries
+<em>Libraries</em>
 Basic libraries for this repository can be installed via **npm install** <<library name>> and they are installed either under global or local environment.
  
 1. Global envirnoment
