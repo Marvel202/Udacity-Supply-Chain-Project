@@ -1,4 +1,4 @@
-#Supply Chain - Coffee Beans
+## Supply Chain - Coffee Beans
 
 This repository containts an Ethereum DApp that demonstrates a Supply Chain flow of Coffee Beans between a Seller and Buyer. The user story is similar to any commonly used supply chain process. A Seller can add items to the inventory system stored in the blockchain. A Buyer can purchase such items from the inventory system. Additionally a Seller can mark an item as Shipped, and similarly a Buyer can mark an item as Received.
 
@@ -123,7 +123,7 @@ npm run dev
 to make the web faster, safer, and more open.
 * [Truffle Framework](http://truffleframework.com/) - Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
 
-##Final Output
+## Final Output
 Etherscan : https://goerli.etherscan.io/address/0x3F8Ee2517c2b68E9721cA0eaAF64e7992457656a
 UI : https://ipfs.io/ipns/k51qzi5uqu5dld2eef4i1m3jiingwf01w1169sh53utjw0j3m8tpnc4zbg7tgu/
 
