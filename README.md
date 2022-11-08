@@ -129,13 +129,13 @@ Accounts from the above categories approved by smart contract of the platform ca
 	
 The architect of DApp and its relevant business logic are illustrated in these UML for ease of reference.  
 
-1. Activity Diagram
+1. Activity Diagram </br>
 ![Activity](images/UML/ActivitySC.png)
-2. Sequence Diagram
+2. Sequence Diagram </br>
 ![Sequence](images/UML/SC_Sequence.png)	
-3. State Diagram
+3. State Diagram </br>
 ![State](images/UML/SC_state.png)
-4. Class Diagram
+4. Class Diagram </br>
 ![Class](images/UML/classDiagram.png)
 	
 ## Built With
