@@ -2765,10 +2765,37 @@
   },
   "networks": {
     "5": {
-      "events": {},
+      "events": {
+        "0x28b26e7a3d20aedbc5f8f2ebf7da671c0491723a2b78f47a097b0e46dee07142": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "ConsumerAdded",
+          "type": "event"
+        },
+        "0x8def3d980252cf2d872ece9b0d5e08f5d4472df336ee30abf762d77438ce7056": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "ConsumerRemove",
+          "type": "event"
+        }
+      },
       "links": {},
-      "address": "0x1b215eA6dA22004B7a446a12149e85376088AAa1",
-      "transactionHash": "0xd1a67f4eb4a64be8ad14ed4f4aee61017549207c756bdd4e638c543b98599212"
+      "address": "0xad2C6de9389F327E6f62a8e502bDbd6d826E8E0C",
+      "transactionHash": "0x04b1c22d9e23c9630324ee2207cbe6a28637dddc96778356fb55ae3912345364"
     },
     "1337": {
       "events": {},
@@ -3621,10 +3648,43 @@
       "links": {},
       "address": "0xc86bE238088dd6b226B2F5C39366d2D8d41D97d4",
       "transactionHash": "0x7f465f04fb332794d3459dee66a841a18f8e2ff6709417123868a5bb2041e339"
+    },
+    "1667864190632": {
+      "events": {
+        "0x28b26e7a3d20aedbc5f8f2ebf7da671c0491723a2b78f47a097b0e46dee07142": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "ConsumerAdded",
+          "type": "event"
+        },
+        "0x8def3d980252cf2d872ece9b0d5e08f5d4472df336ee30abf762d77438ce7056": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "ConsumerRemove",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x56bB909f49EFeFd83f877a9Cbd70040d75e53054",
+      "transactionHash": "0xf0d4a4a033e5d8d696b80375e82d42db9c213853edda3e9e1e5b70ff73d2ef6f"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-11-07T03:41:30.815Z",
+  "updatedAt": "2022-11-08T00:34:25.762Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

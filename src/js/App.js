@@ -105,7 +105,7 @@ App = {
         var jsonSupplyChain='../../build/contracts/SupplyChain.json';
         var accounts = await web3.eth.getAccounts();
         web3.eth.defaultAccount = await accounts[0];
-        
+        var networkID = await web3.eth.net.getId()
  
         /// JSONfy the smart contracts
        await $.getJSON(jsonSupplyChain, function(data) {
@@ -113,12 +113,16 @@ App = {
             var SupplyChainArtifact = data;
             App.contracts.SupplyChain = TruffleContract(SupplyChainArtifact);
             App.contracts.SupplyChain.setProvider(App.web3Provider);
-            const contractId = web3.eth.net.getId().then(res => SupplyChainArtifact.networks[res])
-            console.log(Object.keys(SupplyChainArtifact.networks)[0])
-            Object.keys(SupplyChainArtifact.networks)[0] == 5 ? contractId.then(function(result){
-                $("#loadedAddr").text("Contract address: https://goerli.etherscan.io/address/"+result.address);
-                }) : contractId.then(function(result){$("#loadedAddr").text("Contract address: " + result.address)
-            })
+            // const contractId = web3.eth.net.getId().then(res => SupplyChainArtifact.networks[res])
+            const contractId = SupplyChainArtifact.networks[networkID]
+            console.log(contractId)
+            networkID == 5? $("#loadedAddr").text("Contract address: https://goerli.etherscan.io/address/"+contractId.address) :
+            $("#loadedAddr").text("Contract address: " + contractId.address)
+            // console.log(Object.keys(SupplyChainArtifact.networks)[0])
+            // Object.keys(SupplyChainArtifact.networks)[0] == 5 ? contractId.then(function(result){
+            //     $("#loadedAddr").text("Contract address: https://goerli.etherscan.io/address/"+result.address);
+            //     }) : contractId.then(function(result){$("#loadedAddr").text("Contract address: " + result.address)
+            // })
         
             App.fetchItemBufferOne();
             App.fetchItemBufferTwo();
@@ -214,6 +218,7 @@ App = {
                 case "distributorID":
                     App.distributorID = await $('#roleId').val();
                     isDistributor = await instance.isDistributor(App.distributorID)
+                    console.log("isDistributor",isDistributor)
                     try {
                         result = await instance.addDistributor(App.distributorID, {from: App.metamaskAccountID});
                         return result;
@@ -225,7 +230,7 @@ App = {
                 case "retailerID":
                     App.retailerID = await $('#roleId').val();
                     isRetailer = await instance.isRetailer(App.retailerID)
-
+                    console.log("isRetailer",isRetailer)
                     try {
                         result = await instance.addRetailer(App.retailerID, {from: App.metamaskAccountID});
                         return result;
@@ -238,6 +243,7 @@ App = {
                 case "consumerID":
                    App.consumerID = await $('#roleId').val(); 
                    isConsumer = await instance.isConsumer(App.consumerID)
+                   console.log("isConsumer",isConsumer)
                    try {
                     result = await instance.addConsumer(App.consumerID, {from: App.metamaskAccountID});
                     return result;

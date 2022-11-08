@@ -2718,10 +2718,37 @@
   },
   "networks": {
     "5": {
-      "events": {},
+      "events": {
+        "0x460ac85606b41cd110c6681291e626a42542e5f7e6aa8c8a3629ecafe88abffb": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "distributorAdded",
+          "type": "event"
+        },
+        "0x29a71ba64557e7f004bde3a9d4c8eaa1f4f4e43e1401170f98b9fd3052b99049": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "distributorRemoved",
+          "type": "event"
+        }
+      },
       "links": {},
-      "address": "0xC49B2466065f59794A1e3c9CDe6D10bb45707E58",
-      "transactionHash": "0xcf6b05665aa33fe14220885525a97634edd815e517c85cf2e92f9b7a3deb3e08"
+      "address": "0x817372eAa729ee24f0b494E67983fC258817097C",
+      "transactionHash": "0xe0e3d019775a0185d3a0b60143a41aaf9edf84cce29f9e80034fa8b61e91b1d5"
     },
     "1337": {
       "events": {},
@@ -3574,10 +3601,43 @@
       "links": {},
       "address": "0x0BfAEFfE85EEd65396F98A4b5774329699790201",
       "transactionHash": "0xc32d9250eaa3572825805db155b415543cb56b9751e53201b73e2166a5f93729"
+    },
+    "1667864190632": {
+      "events": {
+        "0x460ac85606b41cd110c6681291e626a42542e5f7e6aa8c8a3629ecafe88abffb": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "distributorAdded",
+          "type": "event"
+        },
+        "0x29a71ba64557e7f004bde3a9d4c8eaa1f4f4e43e1401170f98b9fd3052b99049": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "distributorRemoved",
+          "type": "event"
+        }
+      },
+      "links": {},
+      "address": "0x4E20A109309e4Bd8726bd68322a556496Fa4E78c",
+      "transactionHash": "0xe26a764aaadcd7f78ac4c6553bf53c22733415890a19e8d70433aaa2ede91125"
     }
   },
   "schemaVersion": "3.4.10",
-  "updatedAt": "2022-11-07T03:41:30.751Z",
+  "updatedAt": "2022-11-08T00:34:25.673Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
