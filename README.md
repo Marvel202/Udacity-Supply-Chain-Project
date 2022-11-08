@@ -8,20 +8,20 @@ This DAPP proves the authenticity of ownership of product from its origin, farme
 Basic libraries for this repository can be installed via **npm install** <<library name>> and they are installed either under global or local environment.
  
 1. Global envirnoment
-
-- Truffle v5.6.2 (core: 5.6.2)
-- Solidity - 0.6.0 (solc-js)
-- Node v16.17.0
+	
+	- Truffle v5.6.2 (core: 5.6.2)
+	- Solidity - 0.6.0 (solc-js)
+	- Node v16.17.0
 
 
 2. Local environment
-- web3.js v1.8.0
-- ganache-cli v6.12.2
-- dotenv v16.0.3
-- truffle/hdwallet-provider@2.0.17
+	- web3.js v1.8.0
+	- ganache-cli v6.12.2
+	- dotenv v16.0.3
+	- truffle/hdwallet-provider@2.0.17
 
 3. Other libraries
-- npm link sol2uml --only=production (for generating class UML automatically)
+	- npm link sol2uml --only=production (for generating class UML automatically)
 
 ### Getting Start
 
@@ -120,10 +120,10 @@ npm run dev
 ### UML
 This Coffee Bean DApp offers platform for the following participants:
 
-a) Farmer;
-b) Distributor;
-c) Retailer; and
-d) Consumer 
+	a) Farmer;
+	b) Distributor;
+	c) Retailer; and
+	d) Consumer 
 
 Accounts from the above categories approved by smart contract of the platform can participate in transacting on this platform. DApp records the stages of transaction as well as the ownerID of the product.  
 	
@@ -140,10 +140,10 @@ The architect of DApp and its relevant business logic are illustrated in these U
 	
 ## Built With
 
-* [Ethereum](https://www.ethereum.org/) - Ethereum is a decentralized platform that runs smart contracts
-* [IPFS](https://ipfs.io/) - IPFS is the Distributed Web | A peer-to-peer hypermedia protocol
-to make the web faster, safer, and more open.
-* [Truffle Framework](http://truffleframework.com/) - Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
+	* [Ethereum](https://www.ethereum.org/) - Ethereum is a decentralized platform that runs smart contracts
+	* [IPFS](https://ipfs.io/) - IPFS is the Distributed Web | A peer-to-peer hypermedia protocol
+	to make the web faster, safer, and more open.
+	* [Truffle Framework](http://truffleframework.com/) - Truffle is the most popular development framework for Ethereum with a mission to make your life a whole 		lot easier.
 
 ## Final Output
 Etherscan : https://goerli.etherscan.io/address/0x3F8Ee2517c2b68E9721cA0eaAF64e7992457656a 
@@ -157,7 +157,7 @@ See also the list of [contributors](https://github.com/your/project/contributors
 
 ## Acknowledgments
 
-* Solidity
-* Ganache-cli
-* Truffle
-* IPFS
+	* Solidity
+	* Ganache-cli
+	* Truffle
+	* IPFS
