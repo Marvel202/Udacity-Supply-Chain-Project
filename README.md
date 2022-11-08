@@ -115,6 +115,8 @@ In a separate terminal window, launch the DApp:
 ```
 npm run dev
 ```
+### UML
+![Activity](images/UML/ActivitySC.png)
 
 ## Built With
 
