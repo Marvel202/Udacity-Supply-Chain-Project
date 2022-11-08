@@ -118,6 +118,17 @@ In a separate terminal window, launch the DApp:
 npm run dev
 ```
 ### UML
+This Coffee Bean DApp offers platform for the following participants:
+
+a) Farmer;
+b) Distributor;
+c) Retailer; and
+d) Consumer 
+
+Accounts from the above categories approved by smart contract of the platform can participate in transacting on this platform. DApp records the stages of transaction as well as the ownerID of the product.  
+	
+The architect of DApp and its relevant business logic are illustrated in these UML for ease of reference.  
+
 1. Activity Diagram
 ![Activity](images/UML/ActivitySC.png)
 2. Sequence Diagram
