@@ -8,6 +8,7 @@ This DAPP proves the authenticity of ownership of product from its origin, farme
 
 Create a new directory as project folder and install all requisite npm packages (as listed in package.json):
 	
+	$ git clone 
 	cd project-6
 	npm install
 	
