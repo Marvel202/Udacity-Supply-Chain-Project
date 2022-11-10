@@ -7,6 +7,7 @@ This DAPP proves the authenticity of ownership of product from its origin, farme
 ## Getting Start
 
 Create a new directory as project folder and install all requisite npm packages (as listed in package.json):
+	
 	cd project-6
 	npm install
 	
@@ -125,7 +126,7 @@ Basic libraries for this repository can be installed via **npm install** <<libra
 	npm run dev
 	```
 ### UML
-This Coffee Bean DApp offers platform for the following participants:
+This Coffee Bean DApp is a platform for the following participants:
 
 	a) Farmer;
 	b) Distributor;
@@ -157,7 +158,22 @@ Etherscan : [Contract Address](https://goerli.etherscan.io/address/0x3F8Ee2517c2
 	</br>
 UI : [IPFS-SupplyChain](https://ipfs.io/ipns/k51qzi5uqu5dld2eef4i1m3jiingwf01w1169sh53utjw0j3m8tpnc4zbg7tgu/)
 
+Transaction record.
 
+| State        | Etherscan record           | Participant |
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+There must be at least 3 dashes separating each header cell.
+The outer pipes (|) are optional, and you don't need to make the 
+raw Markdown line up prettily. You can also use inline Markdown.
+
+Markdown | Less | Pretty
+--- | --- | ---
+*Still* | `renders` | **nicely**
+1 | 2 | 3
 ## Authors
 
 See also the list of [contributors](https://github.com/your/project/contributors.md) who participated in this project.
