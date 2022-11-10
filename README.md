@@ -4,6 +4,13 @@ This repository containts an Ethereum DApp that demonstrates a Supply Chain flow
 
 This DAPP proves the authenticity of ownership of product from its origin, farmer, through consumer with immutable record on Ethereum Blockchain.  Both frontend and backend are decentralised to warrant a 24/7 operation. 
 
+## Getting Start
+
+Create a new directory as project folder and install all requisite npm packages (as listed in package.json):
+	cd project-6
+	npm install
+	
+	
 ### Libraries
 Basic libraries for this repository can be installed via **npm install** <<library name>> and they are installed either under global or local environment.
  
@@ -23,11 +30,6 @@ Basic libraries for this repository can be installed via **npm install** <<libra
 3. Other libraries
 	- npm link sol2uml --only=production (for generating class UML automatically)
 
-### Getting Start
-
-Create a new directory as project folder and install all requisite npm packages (as listed in package.json):
-	cd project-6
-	npm install
 
 4. Decentralized Backend and Frontend
 	This DApp is built on Ethereum network which stores record for public access. Transaction record including the DApp program code (smart contract) once deployed are immutable.  Please Goerli Test Network which is the network this DApp is running on.  
@@ -36,90 +38,90 @@ Create a new directory as project folder and install all requisite npm packages 
 
 ### Launch Ganache
 
-For a pre-determined development environment, please use: 
+5. For a pre-determined development environment, please use: 
 
 	ganache-cli -m "spirit supply whale amount human item harsh scare congress discover talent hamster"
 
 
-Your terminal should look something like this:
+	Your terminal should look something like this:
 
-![truffle test](images/test_wallets.png)
+	![truffle test](images/test_wallets.png)
 
-In a separate terminal window, Compile smart contracts:
+	In a separate terminal window, Compile smart contracts:
 
-```
-truffle compile
-```
+	```
+	truffle compile
+	```
 
-Your terminal should look something like this:
+	Your terminal should look something like this:
 
-![truffle test](images/truffle_compile.png)
+	![truffle test](images/truffle_compile.png)
 
-This will create the smart contract artifacts in folder ```build\contracts```.
+	This will create the smart contract artifacts in folder ```build\contracts```.
 
-Migrate smart contracts to the locally running blockchain, ganache-cli:
+	Migrate smart contracts to the locally running blockchain, ganache-cli:
 
-```
-truffle migrate
-```
+	```
+	truffle migrate
+	```
 
-Your terminal should look something like this:
+	Your terminal should look something like this:
 
-![truffle test](images/truffle_migrate.png)
+	![truffle test](images/truffle_migrate.png)
 
-### Test smart contracts:
+	### Test smart contracts:
 
-```
-truffle test
-```
+	```
+	truffle test
+	```
 
-All 10 tests should pass.
+	All 10 tests should pass.
 
-![truffle test](images/truffle_test.png)
+	![truffle test](images/truffle_test.png)
 
-In a separate terminal window, launch the DApp:
+	In a separate terminal window, launch the DApp:
 
-```
-npm run dev
-```
+	```
+	npm run dev
+	```
 
-In a separate terminal window, Compile smart contracts:
+	In a separate terminal window, Compile smart contracts:
 
-```
-truffle compile
-```
+	```
+	truffle compile
+	```
 
-Your terminal should look something like this:
+	Your terminal should look something like this:
 
-![truffle test](images/truffle_compile.png)
+	![truffle test](images/truffle_compile.png)
 
-This will create the smart contract artifacts in folder ```build\contracts```.
+	This will create the smart contract artifacts in folder ```build\contracts```.
 
-Migrate smart contracts to the locally running blockchain, ganache-cli:
+	Migrate smart contracts to the locally running blockchain, ganache-cli:
 
-```
-truffle migrate
-```
+	```
+	truffle migrate
+	```
 
-Your terminal should look something like this:
+	Your terminal should look something like this:
 
-![truffle test](images/truffle_migrate.png)
+	![truffle test](images/truffle_migrate.png)
 
-Test smart contracts:
+	Test smart contracts:
 
-```
-truffle test
-```
+	```
+	truffle test
+	```
 
-All 10 tests should pass.
+	All 10 tests should pass.
 
-![truffle test](images/truffle_test.png)
+	![truffle test](images/truffle_test.png)
 
-In a separate terminal window, launch the DApp:
+	In a separate terminal window, launch the DApp:
 
-```
-npm run dev
-```
+	```
+	npm run dev
+	```
 ### UML
 This Coffee Bean DApp offers platform for the following participants:
 
