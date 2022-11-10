@@ -156,21 +156,25 @@ The architect of DApp and its relevant business logic are illustrated in these U
 ## Final Output
 Etherscan : https://goerli.etherscan.io/address/0x3F8Ee2517c2b68E9721cA0eaAF64e7992457656a
 	</br>
-IPFS (UI) : (https://ipfs.io/ipns/k51qzi5uqu5dld2eef4i1m3jiingwf01w1169sh53utjw0j3m8tpnc4zbg7tgu/)
+IPFS (UI) : https://ipfs.io/ipns/k51qzi5uqu5dld2eef4i1m3jiingwf01w1169sh53utjw0j3m8tpnc4zbg7tgu/
 
 Transaction record.
 
-| State        | Etherscan record           | Participant |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| State of an Item        | Etherscan record           | Participant |
+| ------------- |:--------------------------------------------------------------------:| :--------:|
+| Harvested      | r0x4e82e0027cc6589fa1fce4bc27a6b50dccde6ca236ec2f5de222dfd817624ec7| Farmer|
+| Processed      | centered      | Farmer |
+| Packed | are neat      | Farmer |
+| ForSale | are neat      | Farmer |
+| Sold | are neat      | Distributor |
+| Shipped | are neat      | Distributor |
+| Received | are neat      | Retailer |
+| Bought| are neat      | Consumer |
 
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the 
-raw Markdown line up prettily. You can also use inline Markdown.
 
-Markdown | Less | Pretty
+Only Contract Owner has the authority to "Add Roles" under the DApp.
+
+Role Added | Etherscan Record  | Pretty
 --- | --- | ---
 *Still* | `renders` | **nicely**
 1 | 2 | 3
