@@ -34,7 +34,7 @@ Basic libraries for this repository can be installed via **npm install** <<libra
 	- npm link sol2uml --only=production (for generating class UML automatically)
 
 
-4. Decentralized Backend and Frontend
+4. Decentralized Backend and Frontend </br>
 	This DApp is built on Ethereum network which stores record for public access. Transaction record including the DApp program code (smart contract) once deployed are immutable.  Please Goerli Test Network which is the network this DApp is running on.  
 	Frontend of DApp was deployed using IPFS gateway and file storage system.  IPFS is a decentralized web hosting service. The site can be up and running 24/7.
 
