@@ -162,22 +162,17 @@ Transaction record.
 
 | State of an Item        | Etherscan record           | Participant |
 | ------------- |:--------------------------------------------------------------------:| :--------:|
-| Harvested      | r0x4e82e0027cc6589fa1fce4bc27a6b50dccde6ca236ec2f5de222dfd817624ec7| Farmer|
-| Processed      | centered      | Farmer |
-| Packed | are neat      | Farmer |
-| ForSale | are neat      | Farmer |
-| Sold | are neat      | Distributor |
-| Shipped | are neat      | Distributor |
-| Received | are neat      | Retailer |
-| Bought| are neat      | Consumer |
+| Harvested      | 0x4e82e0027cc6589fa1fce4bc27a6b50dccde6ca236ec2f5de222dfd817624ec7 | Farmer|
+| Processed      | 0x64e9bbd43a2543dbfd0f40e9997a50d4c6799dac78594f81909e0179e83f2237| Farmer |
+| Packed | 0x826e249c911aa5bb3461377da30c28089f866427be11f56d69d915978a35b88b | Farmer |
+| ForSale |0xd3be4b0a77f5d060f814ff61cbfd6d06b394aa9e31d2c6f92009605750ca08ba | Farmer |
+| Sold | 0xd91aeb58ed1f5c6f9b48cff0024d87d2d19853803c1505c47036efbba55633e0   | Distributor |
+| Shipped | 0xdf8080a5b7927b59f26514673c9149f0cb66994a847a49daf39d922e7b0dc405 | Distributor |
+| Received | 0x5f19806e1b62b5b65ac2c101d7eec71aef5687cdbe1c26750257f28cb778f433 | Retailer |
+| Bought|0x2f5a3f17e9e679528d5744f0b487cd5e1bce0ae5f57ed8a510a84691ee03ec4d | Consumer |
 
 
-Only Contract Owner has the authority to "Add Roles" under the DApp.
 
-Role Added | Etherscan Record  | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
 ## Authors
 
 See also the list of [contributors](https://github.com/your/project/contributors.md) who participated in this project.
