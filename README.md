@@ -47,7 +47,9 @@ Basic libraries for this repository can be installed via **npm install** <<libra
 
 	![truffle test](images/test_wallets.png)
 
-	In a separate terminal window, Compile smart contracts:
+### Truffle - Compile, Migrate & Test 
+	
+6. In a separate terminal window, Compile smart contracts:
 
 	```
 	truffle compile
